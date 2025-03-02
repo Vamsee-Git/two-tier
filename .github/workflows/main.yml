@@ -35,6 +35,7 @@ jobs:
       # Step 4: Remove any previously committed large files from git history (if any)
       - name: Remove Large File from Git History
         run: |
+          git ls-files .terraform/providers/registry.terraform.io/hashicorp/aws/5.88.0/linux_amd64/terraform-provider-aws_v5.88.0_x5
           git rm --cached .terraform/providers/registry.terraform.io/hashicorp/aws/5.88.0/linux_amd64/terraform-provider-aws_v5.88.0_x5
           git commit -m "Remove large provider file from repo history"
           git push origin main --force
